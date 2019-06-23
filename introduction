@@ -1,0 +1,210 @@
+                                                    EXPERIMENT NO.-1
+(STUDY OF FUNDAMENTAL GRAPHICS FUNCTIONS)
+ C graphics using graphics.h functions or WinBGIM (Windows 7) can be used to draw different shapes, display text in different fonts, change colors and many more. Using functions of graphics.h in Turbo C compiler you can make graphics programs, animations, projects and games. You can draw circles, lines, rectangles, bars and many other geometrical figures. You can change their colors using the available functions and fill them. Following is a list of functions of graphics.h header file. Every function is discussed with the arguments it needs, its description, possible errors while using that function and a sample C graphics program with its output. Graphics programming in C used to drawing various geometrical shapes(rectangle, circle eclipse etc), use of mathematical function in drawing curves, coloring an object with different colors and patterns and simple animation programs like jumping ball and moving cars.
+“This interface provides access to a simple graphics library that makes it possible to draw lines, rectangles, ovals, arcs, polygons, images, and strings on a graphical window.”
+Functions:-
+1.)Cleardevice:-
+Declaration: -   void cleardevice();
+cleardevice  function clears the screen in graphics mode and sets the current position to (0,0). Clearing the screen consists of filling the screen with current background color.
+
+2.)Putpixel:-
+Purpose:-Putpixel function is to draw the pixel on the screen.  Pixel is small dot on the screen.
+Syntax:-putpixel(x co-orinate, y co-ordinate,COLOR);
+Example: – putpixel(100,100,BLUE);
+
+3.) SetbkColor:-
+Purpose: -Setbkcolor function is used to set background color of the screen.
+Syntax:- setbkcolor(COLOR);
+Example:- setbkcolor(RED);
+
+4. )Setlinestyle:-
+Purpose:-setlinestyle function is used to set the current line style, width and pattern
+Syntax:-setlinestyle(linestyle, pattern, thickness);
+Example:-setlinestyle(SOLID_LINE,1,2);
+
+5.) Setcolor:-
+Purpose:-setcolor is to set color of the objects which is to be drawn after this setcolor line.
+Syntax:-setcolor(COLOR);
+Example:-setcolor(RED);
+
+6.) Textheight:-
+Purpose:-textheight returns the height of a string in pixels.
+Syntax:-textheight(STRING);
+Example:-i=textheight(“HELLO”);
+
+7. )Textwidth:-
+Purpose:-textwidth returns the width of a string in pixels
+Syntax:-textwidth(STRING);
+Example:-i=textwidth(“HELLO”);
+
+8. )Getx:-
+Purpose:-getx returns the current position’s of x o-ordinate
+Syntax:-getx();
+Example:-x=getx();
+
+9. )Gety:-
+Purpose:-gety returns the current position’s of y co-ordinate
+Syntax:-gety();
+Example:-y=gety();
+
+10.) Getmaxx:-
+Purpose:-getmaxxreturns the maximum x co-ordinate on the screen
+Syntax:-getmaxx();
+Example:-maxx=getmaxx();
+
+11.)Getmaxy:-
+Purpose:-getmaxy returns the maximum y co-ordinate on the screen
+Syntax:-getmaxy();
+Example:-maxy=getmaxy();
+
+13.) Closegraph:-
+Purpose:-closegraph function shut down the graphic system
+Syntax:-closegraph();
+Example:-closegraph();
+
+14.) Moveto:-
+Purpose:-moveto function moves current cursor position on the screen
+Syntax: - moveto(x co-ordinate, y co-ordinate);
+Example: - moveto(getmaxx/2, getmaxy/2);
+
+15.) Settextstyle:-
+Purpose:-settextstyle sets the current text characteristics like font, direction and size
+Syntax: - settextstyle(font, direction size);
+Example: - settextstyle(1,1,10);
+            Font    1          DEFAULT
+                        2          TRIPLET
+
+16.) Cleardevice:-
+Purpose: cleardevice function is used to clear the contents or graphic images on the screen in graphics mode.
+Syntax: cleardevice();
+Example: cleardevice();
+
+17). Outtextxy:-
+Purpose:  outtextxy function is used to print the text on the screen in graphics mode.
+Syntax: outtext(x,y,text);
+Example:- outtextxy(100,100,”HELLO”);
+
+18.) Sector:-
+Purpose: sector function draws and fills an elliptical pie slice.
+Syntax: sector(x, y, starting angle, ending angle, xradius, yradius);
+Example: sector(100,100,45 135 100 50);
+
+19.) Setfillstyle:-
+Purpose: setfillstyle is used to set the color and style to be filled in the object using the flood fill method.
+Syntax: stefillstyle(STYLE, COLOR);
+Example: setfillstyle(1,RED)
+
+20.)	Outtext:-
+Purpose: outtext function is used to display the text on the screen, using this function text is display in the current position.
+Syntax: outtext(STRING);
+Example: outtex(“HELLO”);
+
+21.) Getcolor:-
+Purpose: getcolor returns the current drawing color.
+Syntax: getcolor();
+Example: intclr = getcolor();
+
+22.) Getpixel:-
+Purpose: getpixel gets the color of a specified pixel.
+Syntax: getpixel(x,y);
+Example: color=getpixel(100,100);
+
+23.) initgraphics():-
+
+Creates the graphics window on the screen. The first form creates a window with a default size of 500x300. The call to initGraphics must precede any console output or calls to other functions in this interface.
+
+LINE:-
+Purpose:-Line function is used to draw the line on the screen.
+Syntax: line(x1,y1,x2,y2);
+Example: - line(100,100,200,100);
+
+
+Source Code:-
+
+#include<graphics.h>
+#include<stdio.h>
+#include<conio.h>
+void main(){
+	int gdriver=DETECT,gmode;
+	int x1=200,y1=200;
+	int x2=300,y2=300;
+	clrscr();
+	initgraph(&gdriver,&gmode,"C:\\TURBOC3\\BGI");
+	line(x1,y1,x2,y2);
+	getch();
+	closegraph();
+	}
+
+
+RECTANGLE:- 
+Purpose:- Rectangle function is used to draw the rectangle on the screen.  X1,y1 are the lower left co-ordinates of the rectangle and the x2,y2 are the upper right co-ordinates of the rectangle.
+Syntax: – rectangle(x1,,y1,x2,y2);
+Example: – rectangle(100,100,200,200);
+Source Code:-
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+
+void main()
+{
+ int gdriver=DETECT,gmode;
+ 	int x1=100,y1=100;
+ 	int x2=200,y2=200;
+ 	clrscr();
+ 	initgraph(&gdriver,&gmode,"C:\\TURBOC3\\BGI");
+ 	rectangle(x1,y1,x2,y2);
+ 	getch();
+ 	closegraph();
+}
+
+
+Circle:-
+Purpose: Circle function is used to draw the circle on the screen
+Syntax: – circle(x,y,radius);
+Example: circle(100,100,50);
+
+Declaration: - void circle(int x, int y, int radius);
+Circle function is used to draw a circle with center (x,y) and third parameter specifies the radius of the circle. The code given below draws a circle
+In the below program (100, 100) are coordinates of center of the circle and 50 is the radius of circle.
+Source code:-
+
+#include<graphics.h>
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ 	 int gdriver=DETECT,gmode;
+ 	 int x=100,y=100;
+ 	 int radius=50;
+ 	 clrscr();
+  	initgraph(&gdriver,&gmode,"C:\\TURBOC3\\BGI");
+  	circle(x,y,radius);
+  	getch();
+ 	 closegraph();
+
+  }
+
+ARC:-
+Purpose: arc draws the arc on the screen, arc is  a part of the circle
+Syntax: arc(x, y, starting angle, ending angle, radius);
+Example: arc( 100,100,90,180,50);
+
+
+Source Code:- 
+#include<graphics.h>
+#include<stdio.h>
+#include<conio.h>
+
+void main(){
+int gdriver=DETECT,gmode;
+int x=250,y=250;
+int start_angle=155,end_angle=300;
+int radius=100;
+clrscr();
+initgraph(&gdriver,&gmode,"C:\\TURBOC3\\BGI");
+arc(x,y.start_angle;end_angle,radius);
+getch();
+closegraph();
+}
+ 
+
